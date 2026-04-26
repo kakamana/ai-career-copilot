@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "career-copilot"
+version = "0.1.0"
+description = "AI Career Copilot — RAG over internal job postings + employee profile, with a LangGraph-style agent stub"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn>=1.4",
+  "matplotlib",
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic>=2",
+  "joblib",
+  "pyarrow",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "httpx",
+  "ruff",
+  "jupyterlab",
+  "mlflow",
+  "rank-bm25",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
